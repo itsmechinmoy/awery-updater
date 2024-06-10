@@ -1,1 +1,1 @@
-{"commit-log":"- Hide comment spoilers,\nUse markdown for comments and media descriptions ~MrBoomDev","status":"success","elapsed-time":16394.149906281,"workflow":{"id":9431196932,"title":"Hide comment spoilers,"}}
+{"commit-log":"- Show created tabs in the bottombar,\nVisually add tabs to the list after it's creation,\nTabs now can be deleted,\nGenerate settings keys constants at build time,\nRefactored SettingsAdapter and SelectionDialog ~MrBoomDev","status":"success","elapsed-time":16035.797355475,"workflow":{"id":9453729805,"title":"Show created tabs in the bottombar,"}}
