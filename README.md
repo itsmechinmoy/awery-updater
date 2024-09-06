@@ -1,8 +1,8 @@
 # [Awery](https://github.com/MrBoomDeveloper/Awery) Updater ( FOR THE ALPHA APK NOT ANY OTHER VERSION )
 
-This is a simple script that grabs the latest release from the actions artifact of the last run, downloads the zip file, grabs the pretester apk from it, then uploads it to releases.
+This simple script grabs the latest release from the actions artifact of the last run, downloads the zip file, grabs the pretester apk from it, and then uploads it to releases.
 
-This is written in [go](https://go.dev/) and utilizes github workflows to run the script continuously.
+This is written in [go](https://go.dev/) and utilizes GitHub workflows to run the script continuously.
 
 ## Usage
 
