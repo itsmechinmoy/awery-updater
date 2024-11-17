@@ -1,1 +1,1 @@
-{"commit-log":"- Update publish_alpha.yml ~Itsmechinmoy","status":"success","elapsed-time":563.043150229,"workflow":{"id":11878445852,"title":"Update publish_alpha.yml"}}
+{"commit-log":"- Fix. Discord Embed Msg (#120)\n\n* Fix. Discord Embed Msg\r\n\r\n* Update publish_alpha.yml\r\n\r\n---------\r\n\r\nCo-authored-by: Itsmechinmoy \u003c167056923+itsmechinmoy@users.noreply.github.com\u003e ~Sheby","status":"success","elapsed-time":2701.707446858,"workflow":{"id":11878722487,"title":"Fix. Discord Embed Msg (#120)"}}
