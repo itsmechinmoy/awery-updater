@@ -37,8 +37,10 @@ jobs:
           DEBUG_MESSAGE: "No previous last-sha artifact found. This is expected on the first run or if previous runs failed."
 
       - name: Debug Missing Artifact
-        if: ${{ !file_exists('last_sha.txt') }}
-        run: echo "$DEBUG_MESSAGE"
+        run: |
+          if [ ! -f last_sha.txt ]; then
+            echo "$DEBUG_MESSAGE"
+          fi
 
       - name: Check for updates
         id: compare
