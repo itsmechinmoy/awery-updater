@@ -22,7 +22,7 @@ jobs:
       - name: Checkout Repository
         run: |
           rm -rf * .[^.] .??*
-          git clone --branch dev https://github.com/MrBoomDeveloper/Awery.git .
+          git clone --branch master https://github.com/MrBoomDeveloper/Awery.git .
 
       - name: Download last SHA artifact
         uses: dawidd6/action-download-artifact@v6
@@ -89,7 +89,7 @@ jobs:
       - name: Checkout Repository
         run: |
           rm -rf * .[^.] .??*
-          git clone --branch dev https://github.com/MrBoomDeveloper/Awery.git .
+          git clone --branch master https://github.com/MrBoomDeveloper/Awery.git .
 
       - name: Get Commits Since Last Run
         run: |
@@ -234,7 +234,7 @@ jobs:
           echo "| ------- | ------- |" >> commit_log.txt
           
           if [ "$UNIVERSAL_APK_EXISTS" = "true" ]; then
-            echo "| Universal | ${{ env.APK_UNIVERSAL }} |" >> commit_log.txt
+            echo "| Universal | ${{ env.APK_UNIVERSAL_SHA }} |" >> commit_log.txt
           fi
           
           if [ "$SPLIT_APKS_EXIST" = "true" ]; then
@@ -252,25 +252,25 @@ jobs:
 
       - name: Upload APKs as Build Artifacts
         if: ${{ env.SKIP_BUILD != 'true' }}
-          uses: actions/upload-artifact@v4
-          with:
-            name: Awery-APKs
-            retention-days: 5
-            compression-level: 9
-            path: |
-              app/build/outputs/apk/release/*.apk
+        uses: actions/upload-artifact@v4
+        with:
+          name: Awery-APKs
+          retention-days: 5
+          compression-level: 9
+          path: |
+            app/build/outputs/apk/release/*.apk
 
       - name: Create GitHub Release and Upload Assets
         if: ${{ env.SKIP_BUILD != 'true' }}
-          uses: ncipollo/release-action@v1
-          with:
-            tag: v${{ env.VERSION }}
-            name: Awery v${{ env.VERSION }}
-            bodyFile: commit_log.txt
-            artifacts: app/build/outputs/apk/release/*.apk
-            draft: true
-            prerelease: true
-            token: ${{ secrets.GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ env.VERSION }}
+          name: Awery v${{ env.VERSION }}
+          bodyFile: commit_log.txt
+          artifacts: app/build/outputs/apk/release/*.apk
+          draft: true
+          prerelease: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Commit Log as Artifact
         uses: actions/upload-artifact@v4
